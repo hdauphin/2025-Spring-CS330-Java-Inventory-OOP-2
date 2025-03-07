@@ -39,7 +39,7 @@ public class Tool extends Item {
      * Default to an unstackable tool with an empty name, zero durability, zero
      * speed, an empty material name, no modifier, and a modifier level of 1.
      */
-    public Tool()                                         //TO-DO
+    public Tool()                                         
     {
         super("");
 
@@ -55,9 +55,14 @@ public class Tool extends Item {
      *
      * @param src Tool to duplicate
      */
-    public Tool(Tool src)                                 //TO-DO
+    public Tool(Tool src)                                 
     {
-
+        super.name = src.name; 
+        this.durability = src.durability; 
+        this.speed = src.speed; 
+        this.material = src.material;
+        this.modifier = src.modifier;
+        this.modifierLevel = src.modifierLevel; 
     }
 
     /**
@@ -127,7 +132,6 @@ public class Tool extends Item {
      */
     public String getModifier()
     {
-    {
         return this.modifier;
     }
 
@@ -158,7 +162,6 @@ public class Tool extends Item {
      */
     public void setModifierLevel(int level)
     {
-    {
         this.modifierLevel = level;
     }
 
@@ -172,16 +175,22 @@ public class Tool extends Item {
      * Read tool attributes.
      */
     @Override
-    public void read(Scanner snr)                         //TO-DO
+    public void read(Scanner snr)                        
     {
         // Complete this method
+        super.name = snr.next();
+        material = snr.next(); 
+        durability = snr.nextInt();
+        speed = snr.nextInt();
+        modifier = snr.next();
+        modifierLevel = snr.nextInt(); 
     }
 
     /**
      * Clone--i.e., copy--this Tool.
      */
     @Override
-    public Item clone()                                   //TO-DO
+    public Item clone()                                   
     {
         return new Tool(this);
     }
@@ -192,7 +201,7 @@ public class Tool extends Item {
      * @param rhs object for which a comparison is desired
      */
     @Override
-    public boolean equals(Object rhs)                     //TO-DO
+    public boolean equals(Object rhs)                     
     {
         if (!(rhs instanceof Tool)) {
             return false;
@@ -201,7 +210,9 @@ public class Tool extends Item {
         Tool rhsItem = (Tool) rhs;
 
         // Replace the next line
-        return false;
+        return this.name.equals(rhsItem.name)
+            && this.material.equals(rhsItem.material)
+            && this.modifier.equals(rhsItem.modifier);
     }
 
     /**
@@ -209,7 +220,7 @@ public class Tool extends Item {
      * codes.
      */
     @Override
-    public int hashCode()                                 //TO-DO
+    public int hashCode()                                
     {
         return this.name.hashCode()
              + this.material.hashCode()
@@ -220,8 +231,16 @@ public class Tool extends Item {
      * *Print* a Tool.
      */
     @Override
-    public String toString()                              //TO-DO
+    public String toString()                              
     {
-        return "";
+        return String.format("  Nme: %s\n  Dur: %s\n  Spd: %d\n  Mtl: %s\n  Mdr: %s (Lvl %d)\n",
+                          this.name,
+                          this.durability,
+                          this.speed, 
+                          this.material,
+                          this.modifier, 
+                          this.modifierLevel);
     }
+
+    
 }
