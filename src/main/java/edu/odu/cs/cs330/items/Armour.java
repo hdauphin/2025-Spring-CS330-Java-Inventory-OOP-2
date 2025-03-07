@@ -44,7 +44,7 @@ public class Armour extends Item {
      * Default to a armour with an empty name, zero durability, zero defense,
      * blank material, no modifier a zero modifier level, and a blank element.
      */
-    public Armour()
+    public Armour()                                         //TO-DO 
     {
 
     }
@@ -54,7 +54,7 @@ public class Armour extends Item {
      *
      * @param src armour to duplicate
      */
-    public Armour(Armour src)
+    public Armour(Armour src)                               //TO-DO
     {
 
     }
@@ -189,7 +189,7 @@ public class Armour extends Item {
      * Read Armour attributes.
      */
     @Override
-    public void read(Scanner snr)
+    public void read(Scanner snr)                           //TO-DO
     {
 
     }
@@ -198,7 +198,7 @@ public class Armour extends Item {
      * Clone--i.e., copy--this Armour.
      */
     @Override
-    public Item clone()
+    public Item clone()                                     //TO-DO
     {
         return new Armour(this);
     }
@@ -210,7 +210,7 @@ public class Armour extends Item {
      * @param rhs object for which a comparison is desired
      */
     @Override
-    public boolean equals(Object rhs)
+    public boolean equals(Object rhs)                       //TO-DO
     {
         if (!(rhs instanceof Armour)) {
             return false;
@@ -227,7 +227,7 @@ public class Armour extends Item {
      * hash codes.
      */
     @Override
-    public int hashCode()
+    public int hashCode()                                   //TO-DO
     {
         return -1;
     }
@@ -236,7 +236,7 @@ public class Armour extends Item {
      * *Print* one Armour.
      */
     @Override
-    public String toString()
+    public String toString()                                //TO-DO
     {
         return "";
     }

@@ -39,7 +39,7 @@ public class Tool extends Item {
      * Default to an unstackable tool with an empty name, zero durability, zero
      * speed, an empty material name, no modifier, and a modifier level of 1.
      */
-    public Tool()
+    public Tool()                                         //TO-DO
     {
         super("");
 
@@ -55,7 +55,7 @@ public class Tool extends Item {
      *
      * @param src Tool to duplicate
      */
-    public Tool(Tool src)
+    public Tool(Tool src)                                 //TO-DO
     {
 
     }
@@ -127,6 +127,7 @@ public class Tool extends Item {
      */
     public String getModifier()
     {
+    {
         return this.modifier;
     }
 
@@ -157,6 +158,7 @@ public class Tool extends Item {
      */
     public void setModifierLevel(int level)
     {
+    {
         this.modifierLevel = level;
     }
 
@@ -170,7 +172,7 @@ public class Tool extends Item {
      * Read tool attributes.
      */
     @Override
-    public void read(Scanner snr)
+    public void read(Scanner snr)                         //TO-DO
     {
         // Complete this method
     }
@@ -179,7 +181,7 @@ public class Tool extends Item {
      * Clone--i.e., copy--this Tool.
      */
     @Override
-    public Item clone()
+    public Item clone()                                   //TO-DO
     {
         return new Tool(this);
     }
@@ -190,7 +192,7 @@ public class Tool extends Item {
      * @param rhs object for which a comparison is desired
      */
     @Override
-    public boolean equals(Object rhs)
+    public boolean equals(Object rhs)                     //TO-DO
     {
         if (!(rhs instanceof Tool)) {
             return false;
@@ -207,7 +209,7 @@ public class Tool extends Item {
      * codes.
      */
     @Override
-    public int hashCode()
+    public int hashCode()                                 //TO-DO
     {
         return this.name.hashCode()
              + this.material.hashCode()
@@ -218,7 +220,7 @@ public class Tool extends Item {
      * *Print* a Tool.
      */
     @Override
-    public String toString()
+    public String toString()                              //TO-DO
     {
         return "";
     }

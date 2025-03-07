@@ -23,7 +23,7 @@ public class Consumable extends Item {
      * Default to a Consumable Item with an empty name, no effect and zero
      * uses.
      */
-    public Consumable()
+    public Consumable()                                    //TO-DO
     {
         super();
 
@@ -36,7 +36,7 @@ public class Consumable extends Item {
      *
      * @param src consumable item to duplicate
      */
-    public Consumable(Consumable src)
+    public Consumable(Consumable src)                      //TO-DO
     {
 
     }
@@ -91,7 +91,7 @@ public class Consumable extends Item {
      * Read Consumable Item attributes.
      */
     @Override
-    public void read(Scanner snr)
+    public void read(Scanner snr)                          //TO-DO
     {
         super.name = snr.next();
         effect     = snr.next();
@@ -102,7 +102,7 @@ public class Consumable extends Item {
      * Clone--i.e., copy--this Consumable Item.
      */
     @Override
-    public Item clone()
+    public Item clone()                                    //TO-DO
     {
         // Replace the next line
         return null;
@@ -114,7 +114,7 @@ public class Consumable extends Item {
      * @param rhs object for which a comparison is desired
      */
     @Override
-    public boolean equals(Object rhs)
+    public boolean equals(Object rhs)                      //TO-DO
     {
         if (!(rhs instanceof Consumable)) {
             return false;
@@ -133,9 +133,9 @@ public class Consumable extends Item {
      * return the result.
      */
     @Override
-    public int hashCode()
+    public int hashCode()                                  //TO-DO
     {
-        // Replace the next line
+        // Replace the next line 
         return -1;
     }
 
@@ -143,7 +143,7 @@ public class Consumable extends Item {
      * *Print* the Consumable Item.
      */
     @Override
-    public String toString()
+    public String toString()                               //TO-DO
     {
         return "";
     }
