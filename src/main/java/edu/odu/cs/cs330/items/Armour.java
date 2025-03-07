@@ -25,7 +25,7 @@ public class Armour extends Item {
     protected String material;
 
     /**
-     * Type of enchantment afforded (e.g. protection, feather_falling, or
+     * Type of enchantment afforded (e.g. protection, feather_falling, or               
      * unbreaking)
      */
     protected String modifier;
@@ -44,9 +44,15 @@ public class Armour extends Item {
      * Default to a armour with an empty name, zero durability, zero defense,
      * blank material, no modifier a zero modifier level, and a blank element.
      */
-    public Armour()                                         //TO-DO 
+    public Armour()                                        
     {
-
+        super("");
+        this.durability = 0;
+        this.defense = 0;
+        this.material = "";
+        this.modifier = "";
+        this.modifierLevel = 0;
+        this.element = "";
     }
 
     /**
@@ -54,9 +60,15 @@ public class Armour extends Item {
      *
      * @param src armour to duplicate
      */
-    public Armour(Armour src)                               //TO-DO
+    public Armour(Armour src)                              
     {
-
+        super.name = src.name; 
+        durability = src.getDurability();
+        defense = src.getDefense();
+        material = src.getMaterial(); 
+        modifier = src.getModifier(); 
+        modifierLevel = src.getModifierLevel(); 
+        element = src.getElement(); 
     }
 
     /**
@@ -189,16 +201,22 @@ public class Armour extends Item {
      * Read Armour attributes.
      */
     @Override
-    public void read(Scanner snr)                           //TO-DO
+    public void read(Scanner snr)                        
     {
-
+        super.name = snr.next();
+        material = snr.next();
+        durability = snr.nextInt();
+        defense = snr.nextInt();
+        modifier = snr.next();
+        modifierLevel = snr.nextInt();
+        element = snr.next();
     }
 
     /**
      * Clone--i.e., copy--this Armour.
      */
     @Override
-    public Item clone()                                     //TO-DO
+    public Item clone()                                  
     {
         return new Armour(this);
     }
@@ -210,16 +228,20 @@ public class Armour extends Item {
      * @param rhs object for which a comparison is desired
      */
     @Override
-    public boolean equals(Object rhs)                       //TO-DO
+    public boolean equals(Object rhs)                     
     {
         if (!(rhs instanceof Armour)) {
             return false;
         }
 
         Armour rhsItem = (Armour) rhs;
-
+        
         // Replace the next line
-        return false;
+        return this.name.equals(rhsItem.name)
+            && this.material.equals(rhsItem.material)
+            && this.modifier.equals(rhsItem.modifier)
+            && this.element.equals(rhsItem.element);
+
     }
 
     /**
@@ -227,18 +249,28 @@ public class Armour extends Item {
      * hash codes.
      */
     @Override
-    public int hashCode()                                   //TO-DO
+    public int hashCode()                                 
     {
-        return -1;
+        return this.name.hashCode()
+             + this.material.hashCode()
+             + this.modifier.hashCode()
+             + this.element.hashCode();
     }
 
     /**
      * *Print* one Armour.
      */
     @Override
-    public String toString()                                //TO-DO
+    public String toString()                              
     {
-        return "";
+        return String.format("  Nme: %s\n  Dur: %d\n  Def: %d\n  Mtl: %s\n  Mdr: %s (Lvl %d)\n  Emt: %s\n",
+                          this.name,
+                          this.durability,
+                          this.defense,
+                          this.material,
+                          this.modifier,
+                          this.modifierLevel,  
+                          this.element);
     }
 }
 
