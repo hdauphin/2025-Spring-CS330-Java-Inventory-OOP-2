@@ -116,7 +116,7 @@ public class Consumable extends Item {
      * @param rhs object for which a comparison is desired
      */
     @Override
-    public boolean equals(Object rhs)                      //TO-DO
+    public boolean equals(Object rhs)                     
     {
         if (!(rhs instanceof Consumable)) {
             return false;
