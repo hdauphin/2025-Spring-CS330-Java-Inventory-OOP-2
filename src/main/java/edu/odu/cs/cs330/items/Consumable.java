@@ -23,7 +23,7 @@ public class Consumable extends Item {
      * Default to a Consumable Item with an empty name, no effect and zero
      * uses.
      */
-    public Consumable()                                    //TO-DO
+    public Consumable()                                   
     {
         super();
 
@@ -36,9 +36,11 @@ public class Consumable extends Item {
      *
      * @param src consumable item to duplicate
      */
-    public Consumable(Consumable src)                      //TO-DO
+    public Consumable(Consumable src)                     
     {
-
+        super.name = src.name; 
+        effect = src.effect; 
+        uses = src.uses; 
     }
 
     /**
@@ -91,7 +93,7 @@ public class Consumable extends Item {
      * Read Consumable Item attributes.
      */
     @Override
-    public void read(Scanner snr)                          //TO-DO
+    public void read(Scanner snr)                        
     {
         super.name = snr.next();
         effect     = snr.next();
@@ -102,10 +104,10 @@ public class Consumable extends Item {
      * Clone--i.e., copy--this Consumable Item.
      */
     @Override
-    public Item clone()                                    //TO-DO
+    public Item clone()                                  
     {
         // Replace the next line
-        return null;
+        return new Consumable(this);
     }
 
     /**
@@ -123,7 +125,8 @@ public class Consumable extends Item {
         Consumable rhsItem = (Consumable) rhs;
 
         // Replace the next line
-        return false;
+        return super.name.equals(rhsItem.name) 
+            && this.effect.equals(rhsItem.effect); 
     }
 
     /**
@@ -133,18 +136,21 @@ public class Consumable extends Item {
      * return the result.
      */
     @Override
-    public int hashCode()                                  //TO-DO
+    public int hashCode()                                
     {
-        // Replace the next line 
-        return -1;
+        return this.name.hashCode()
+             + this.effect.hashCode();
     }
 
     /**
      * *Print* the Consumable Item.
      */
     @Override
-    public String toString()                               //TO-DO
+    public String toString()                            
     {
-        return "";
+        return String.format("  Nme: %s\n  Eft: %s\n  Use: %d\n",
+                          this.name,
+                          this.effect,
+                          this.uses);
     }
 }
